@@ -1,0 +1,51 @@
+{% include 'base_template.html' %}
+
+
+<!--{% block title %}-->
+<!--    Create a new account-->
+<!--{% endblock %}-->
+
+<!--"-->
+{% block content %}
+<body class="text-center" >
+    <div class="container" >
+        <form method="post"  action="{{ url_for('register_page') }}" class="form-register" style="color:white">
+
+            {{ form.hidden_tag() }}
+<!--                <img class="mb-4" src="https://png.pngtree.com/png-clipart/20190916/original/pngtree-cartoon-shopping-cart-png-image_4586974.jpg" alt="">-->
+                <h1 class="h3 mb-3 font-weight-normal">
+                    Create your Account
+                </h1>
+<!--                {{ form.username.label() }}-->
+                {{ form.username(class="form-control", placeholder="Enter an username") }}
+                <br>
+                <br>
+
+<!--                {{ form.email.label() }}-->
+                {{ form.email(class="form-control", placeholder="Enter your email id") }}
+                <br>
+                <br>
+
+<!--                {{ form.password1.label() }}-->
+                {{ form.password1(class="form-control", placeholder="Create a password") }}
+                <br>
+                <br>
+<!--                {{ form.password2.label() }}-->
+                {{ form.password2(class="form-control", placeholder="Confirm your password") }}
+                <br>
+                <br>
+
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+            <br>
+
+                <div class="checkbox mb=3">
+                    <h6>Already have an account?</h6>
+                    <a class="btn btn-sn btn-secondary", href="{{ url_for('login_page') }}">Login</a>
+
+                </div>
+
+        </form>
+    </div>
+</body>
+{% endblock %}
